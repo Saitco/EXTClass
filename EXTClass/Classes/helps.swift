@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreLocation
 
 /// Contiene metodos ayudantes para situaciones.
 struct helps {

@@ -22,7 +22,7 @@ pod "EXTClass"
 
 ## Author
 
-Matias Correnti, saitco.pro@gmail.com
+Matias Correnti, @matCorrenti
 
 ## License
 

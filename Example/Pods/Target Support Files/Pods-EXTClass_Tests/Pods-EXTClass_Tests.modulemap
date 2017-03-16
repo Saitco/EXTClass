@@ -1,0 +1,6 @@
+framework module Pods_EXTClass_Tests {
+  umbrella header "Pods-EXTClass_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

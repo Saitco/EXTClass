@@ -37,6 +37,6 @@ EXTClass contiene extensiones utiles y otras cosas.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'UIKit'
+  s.frameworks = 'UIKit', 'CoreLocation'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

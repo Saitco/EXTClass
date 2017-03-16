@@ -1,6 +1,5 @@
 # EXTClass
 
-#[![CI Status](http://img.shields.io/travis/Matias Correnti/EXTClass.svg?style=flat)](https://travis-ci.org/Matias Correnti/EXTClass)
 [![Version](https://img.shields.io/cocoapods/v/EXTClass.svg?style=flat)](http://cocoapods.org/pods/EXTClass)
 [![License](https://img.shields.io/cocoapods/l/EXTClass.svg?style=flat)](http://cocoapods.org/pods/EXTClass)
 [![Platform](https://img.shields.io/cocoapods/p/EXTClass.svg?style=flat)](http://cocoapods.org/pods/EXTClass)

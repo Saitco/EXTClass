@@ -1,6 +1,0 @@
-framework module EXTClass {
-  umbrella header "EXTClass-umbrella.h"
-
-  export *
-  module * { export * }
-}

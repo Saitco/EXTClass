@@ -1,6 +1,0 @@
-use_frameworks!
-target 'EXTClass_Tests' do
-  pod 'EXTClass', :path => '../'
-  
-  
-end

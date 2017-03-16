@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Foundation
 import CoreLocation
 
 /// Contiene metodos ayudantes para situaciones.
-struct helps {
+public struct helps {
     
     /// Crea un CLLocation desde dos cadenas String.
     ///
@@ -18,7 +19,7 @@ struct helps {
     ///   - lat: Número de la Latitud.
     ///   - lng: Número de la longitud.
     /// - Returns: CLLocation creado.
-    func getCLLocation(_ lat: String, lng: String) -> CLLocation {
+    public func getCLLocation(_ lat: String, lng: String) -> CLLocation {
         return CLLocation(latitude: Double(lat)! as CLLocationDegrees, longitude: Double(lng)! as CLLocationDegrees)
     }
     

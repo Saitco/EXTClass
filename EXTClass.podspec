@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EXTClass'
-  s.version          = '0.2.2'
+  s.version          = '0.2.3'
   s.summary          = 'EXTClass contiene extensiones utiles.'
 
 # This description is used to generate tags and improve search results.
@@ -37,8 +37,11 @@ EXTClass contiene extensiones utiles y otras cosas.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'UIKit'
-  s.frameworks = 'CoreLocation'
-  s.frameworks = 'Foundation'
+  s.frameworks = 'UIKit', 'Foundation', 'CoreLocation', 'CoreData'
   # s.dependency 'AFNetworking', '~> 2.3'
+
+  s.libraries = 'xml2'
+  s.xcconfig = {
+  'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2'
+  }
 end

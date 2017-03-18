@@ -4,11 +4,16 @@
 [![License](https://img.shields.io/cocoapods/l/EXTClass.svg?style=flat)](http://cocoapods.org/pods/EXTClass)
 [![Platform](https://img.shields.io/cocoapods/p/EXTClass.svg?style=flat)](http://cocoapods.org/pods/EXTClass)
 
-## Example
+<!--## Example-->
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+<!--To run the example project, clone the repo, and run `pod install` from the Example directory first.-->
 
 ## Requirements
+
+```ruby
+iOS 8.3
+Swift 3.0
+```
 
 ## Installation
 

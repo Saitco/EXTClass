@@ -10,10 +10,8 @@
 
 ## Requirements
 
-```ruby
-iOS 8.3
-Swift 3.0
-```
+> iOS 8.3
+> Swift 3.0
 
 ## Installation
 
@@ -26,7 +24,7 @@ pod "EXTClass"
 
 ## Author
 
-Matias Correnti, @matCorrenti
+Matias Correnti, [@matCorrenti](http://twitter.com/matCorrenti).
 
 ## License
 

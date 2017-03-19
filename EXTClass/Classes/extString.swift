@@ -133,14 +133,14 @@ extension String {
     /// Buscar mediante index.
     ///
     /// - Parameter i: Posición a buscar.
-    subscript (i: Int) -> Character {
+    public subscript (i: Int) -> Character {
         return self[self.characters.index(self.startIndex, offsetBy: i)]
     }
     
     /// Buscar mediante index.
     ///
     /// - Parameter i: Posición a buscar.
-    subscript (i: Int) -> String {
+    public subscript (i: Int) -> String {
         return String(self[i] as Character)
     }
     

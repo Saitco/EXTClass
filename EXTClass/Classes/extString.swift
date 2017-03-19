@@ -159,7 +159,7 @@ extension String {
     /// Aplica formato personalizado a la cadena (3 a 03).
     ///
     /// - Returns: Cadena modificada.
-    public func MyFormato () -> String {
+    public func MyFormato() -> String {
         do {
             let valor: Int = try Int(self)!
             guard valor <= 9 else { return self }

@@ -10,8 +10,7 @@
 
 ## Requirements
 
-> iOS 8.3
-> Swift 3.0
+> iOS 8.3 and Swift 3.0
 
 ## Installation
 

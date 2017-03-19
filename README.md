@@ -3,7 +3,9 @@
 [![Version](https://img.shields.io/cocoapods/v/EXTClass.svg?style=flat)](http://cocoapods.org/pods/EXTClass)
 [![License](https://img.shields.io/cocoapods/l/EXTClass.svg?style=flat)](http://cocoapods.org/pods/EXTClass)
 [![Platform](https://img.shields.io/cocoapods/p/EXTClass.svg?style=flat)](http://cocoapods.org/pods/EXTClass)
-[![build](https://travis-ci.org/Saitco/EXTClass.svg?branch=master)](http://cocoapods.org/pods/EXTClass)
+[![build](https://travis-ci.org/Saitco/EXTClass.svg?branch=master)](https://travis-ci.org/Saitco/EXTClass.svg?branch=master)
+[![codecov](https://codecov.io/gh/Saitco/EXTClass/branch/master/graph/badge.svg)](https://codecov.io/gh/Saitco/EXTClass)
+
 
 <!--## Example-->
 

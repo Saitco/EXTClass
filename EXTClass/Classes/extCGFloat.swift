@@ -9,27 +9,27 @@
 import UIKit
 
 extension CGFloat {
-    
+
     /// Return the central value of CGFloat.
     public var center: CGFloat { return (self / 2) }
-    
+
     public func degreesToRadians() -> CGFloat {
         return toRadians()
     }
-    
+
     public func toRadians() -> CGFloat {
         return (CGFloat (M_PI) * self) / 180.0
     }
-    
+
     public mutating func toRadiansInPlace() {
         self = (CGFloat (M_PI) * self) / 180.0
     }
-    
+
     /// Converts angle degrees to radians.
     public func degreesToRadians (_ angle: CGFloat) -> CGFloat {
         return (CGFloat (M_PI) * angle) / 180.0
     }
-    
+
     /// Convierte a una cadena de texto personalizada describiendo si es kilometros o metros. Muestras: A "2.345 km", "A 278 m", "A 24 m".
     ///
     /// - Parameters:
@@ -61,7 +61,7 @@ extension CGFloat {
         let tex = letra + num + ter
         return tex
     }
-    
+
     /// Le aplica una ganancia al número.
     ///
     /// - Parameter ganancia: Ganancia a aplicar (Ej: 30 para un 30%).
@@ -70,5 +70,5 @@ extension CGFloat {
         let gana = self * (ganancia/100)
         return self + gana
     }
-    
+
 }

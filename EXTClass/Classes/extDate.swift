@@ -9,7 +9,7 @@
 import UIKit
 
 extension Date {
-    
+
     /// Lo convierte a String.
     ///
     /// - Parameters:
@@ -20,7 +20,7 @@ extension Date {
         formatter.dateFormat = format
         return formatter.string(from: self)
     }
-    
+
     /// Optiene el año en curso.
     ///
     /// - Returns: Int.
@@ -29,7 +29,7 @@ extension Date {
         let res = calendar.component(.year, from: self)
         return res
     }
-    
+
     /// Optiene el mes en curso.
     ///
     /// - Returns: Int.
@@ -38,7 +38,7 @@ extension Date {
         let res = calendar.component(.month, from: self)
         return res
     }
-    
+
     /// Optiene el dia en curso.
     ///
     /// - Returns: Int.
@@ -47,7 +47,7 @@ extension Date {
         let res = calendar.component(.day, from: self)
         return res
     }
-    
+
     /// Crea una fecha en base a un día y mes con el año en curso.
     ///
     /// - Parameters:
@@ -57,13 +57,13 @@ extension Date {
     public func getFecha(_ dia: Int, mes: Int) -> Date {
         let calendar =  Calendar.current
         let year =  calendar.component(.year, from: self)
-        
+
         let format: String = "dd/MM/yyyy"
         let formatter = DateFormatter()
         formatter.dateFormat = format
         return formatter.date(from: "\(dia)/\(mes)/\(year)")!
     }
-    
+
     /// Compara la fecha con otra fecha para saber si son iguales (No tiene en cuenta la hora).
     ///
     /// - Parameter comparar: Fecha para comparar.
@@ -74,19 +74,19 @@ extension Date {
         let year1: Int = calendar.component(.year, from: fechaSelf)
         let month1: Int = calendar.component(.month, from: fechaSelf)
         let day1: Int = calendar.component(.day, from: fechaSelf)
-        
+
         let calendar2 = Calendar.current
         let year2: Int = calendar2.component(.year, from: comparar)
         let month2: Int = calendar2.component(.month, from: comparar)
         let day2: Int = calendar2.component(.day, from: comparar)
-        
+
         if day1 == day2 && month1 == month2 && year1 == year2 {
             return true
         } else {
             return false
         }
     }
-    
+
 }
 
 
@@ -95,7 +95,7 @@ extension Date {
 
 // MARK: - Para ver el tiempo pasado.
 extension Date {
-    
+
     /// Unidades de tiempo disponibles.
     public enum unidadTiempo {
         case segundos
@@ -106,7 +106,7 @@ extension Date {
         case meses
         case años
     }
-    
+
     /// Pregunta si ya pasó el tiempo.
     ///
     /// - Parameters:
@@ -121,7 +121,7 @@ extension Date {
         let weeks = days / 7
         let months = weeks / 4
         let years = months / 12
-        
+
         switch unidad {
         case .segundos:
             if Int(seconds) > tiempo { return true }
@@ -140,7 +140,7 @@ extension Date {
         }
         return false
     }
-    
+
 }
 
 
@@ -149,7 +149,7 @@ extension Date {
 
 // MARK: - Complemento social.
 extension Date {
-    
+
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
@@ -189,7 +189,7 @@ extension Date {
         }
         return "\(years) years ago"
     }
-    
+
     /// Social.
     ///
     /// - Returns: <#return value description#>
@@ -229,5 +229,5 @@ extension Date {
         }
         return "hace \(years) años"
     }
-    
+
 }

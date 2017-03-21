@@ -9,7 +9,7 @@
 import UIKit
 
 extension String {
-    
+
     /// Borra o reemplaza una cadena de texto dentro de otro texto.
     ///
     /// - Parameters:
@@ -27,7 +27,7 @@ extension String {
                     let dd = rangos.reversed()
                     for itemG in dd {
                         let nsRango = texto.nsRange(from: itemG)
-                        
+
                         let nsString = texto as NSString
                         texto = nsString.replacingCharacters(in: nsRango, with: reemplazo)
                     }
@@ -36,7 +36,7 @@ extension String {
         }
         return texto
     }
-    
+
     /// Busca mediante una expresion regular dentro de la cadena.
     ///
     /// - Parameter regex: Expresion regular usada para buscar.
@@ -52,7 +52,7 @@ extension String {
             return []
         }
     }
-    
+
     /// <#Description#>
     ///
     /// - Parameters:
@@ -68,9 +68,9 @@ extension String {
             return re.matches(in: self, options: [], range: nsRange(from: startIndex ..< endIndex)).flatMap { range(from: $0.range) }
         }
     }
-    
+
     //Para Swift3
-    
+
     /// <#Description#>
     ///
     /// - Parameter nsRange: <#nsRange description#>
@@ -84,9 +84,9 @@ extension String {
             else { return nil }
         return from ..< to
     }
-    
+
     //Para Swift3
-    
+
     /// <#Description#>
     ///
     /// - Parameter range: <#range description#>
@@ -98,8 +98,8 @@ extension String {
         return NSMakeRange(utf16view.distance(from: utf16view.startIndex, to: from),
                            utf16view.distance(from: from, to: to))
     }
-    
-    
+
+
     /// Elimina todos los espacios en blanco que se encuentran al final de una cadena.
     ///
     /// - Returns: La cadena sin los espacios al final.
@@ -116,7 +116,7 @@ extension String {
         }
         return returns
     }
-    
+
     /// Convierte una cadena con el formato "3:4" a un CGFloat (Usar para los NSLayoutConstraint aspect de las imagenes).
     ///
     /// - Returns: Su equivalente en CGFloat.
@@ -124,38 +124,47 @@ extension String {
         let valor = self.components(separatedBy: ":")
         return CGFloat((valor[0] as NSString).floatValue)/CGFloat((valor[1] as NSString).floatValue)
     }
-    
+
     /// Largo del String.
     public var length: Int {
         return self.characters.count
     }
-    
+
     /// Buscar mediante index.
     ///
     /// - Parameter i: Posición a buscar.
     public subscript (i: Int) -> Character {
         return self[self.characters.index(self.startIndex, offsetBy: i)]
     }
-    
+
     /// Buscar mediante index.
     ///
     /// - Parameter i: Posición a buscar.
     public subscript (i: Int) -> String {
         return String(self[i] as Character)
     }
-    
-    /// Convierte un string a NSDate, si no puede regresa la fecha e hoy.
+
+    /// Convierte un string a Date, si no puede regresa la fecha del día.
     ///
-    /// - Returns: Un NSDate.
-    public func convertirAFecha() -> Date {
+    /// - Parameter format: Formato de la fecha.
+    /// - Returns: Date.
+    public func toDate(format: String = "dd/MM/yyyy, HH:mm:ss") -> Date {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy, HH:mm:ss"
+        formatter.dateFormat = format
         if let fechaSalida = formatter.date(from: self) {
             return fechaSalida
         }
         return Date()
     }
-    
+
+    /// Convierte un string a Date, si no puede regresa la fecha del día.
+    ///
+    /// - Parameter format: Formato de la fecha.
+    /// - Returns: Date.
+    public func toDateDay() -> Date {
+        return self.toDate(format: "dd/MM/yyyy")
+    }
+
     /// Aplica formato personalizado a la cadena (3 a 03).
     ///
     /// - Returns: Cadena modificada.
@@ -168,7 +177,7 @@ extension String {
             return self
         }
     }
-    
+
     /// Convierte el String con el formato '0|0|0|0' en una lista de Int.
     ///
     /// - Parameter separador: Caracter usado para separar los numeros (Defauld: |).
@@ -176,7 +185,7 @@ extension String {
     public func descomponer(separador: String = "|") -> [Int] { //converALibros
         return self.components(separatedBy: separador).map { Int($0)! }
     }
-    
+
     /// Convierte en Date el String.
     ///
     /// - Returns: Date.
@@ -184,5 +193,5 @@ extension String {
         let fechaInt = self.descomponer(separador: "|")
         return Date().getFecha(fechaInt[1], mes: fechaInt[0])
     }
-    
+
 }

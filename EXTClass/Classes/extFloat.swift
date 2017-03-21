@@ -9,7 +9,7 @@
 import UIKit
 
 extension Float {
-    
+
     /// Le aplica una ganancia al número.
     ///
     /// - Parameter ganancia: Ganancia a aplicar (Ej: 30 para un 30%).
@@ -18,7 +18,7 @@ extension Float {
         let gana = self * (ganancia/100)
         return self + gana
     }
-    
+
     /// Le resta un valor y regresa el resultado de esa resta (Puede regresar valores negativos si el valor es mayor al número a operar).
     ///
     /// - Parameter numero: Valor para restar.
@@ -26,7 +26,7 @@ extension Float {
     public func getDifNumero(_ numero: Float) -> Float {
         return self - numero
     }
-    
+
     /// Calcula la diferencia y la regresa en porcentaje (Regresa siempre valor positivo).
     ///
     /// - Parameter numero: Valor para restar.
@@ -41,7 +41,7 @@ extension Float {
         }
         return resultado
     }
-    
+
     /// Multiplica el número.
     ///
     /// - Parameter valor: Múltiplo.
@@ -49,5 +49,5 @@ extension Float {
     public func multiplicar(_ valor: Int) -> Float {
         return self * Float(valor)
     }
-    
+
 }

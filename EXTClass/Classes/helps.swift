@@ -26,24 +26,24 @@ public func getCLLocation(_ lat: String, lng: String) -> CLLocation {
 
 /**
  Optiene la distancia en número del usuario al comercio (Lo calcula mediante CoreLocation del celular).
- 
+
  - author: Correnti
- 
+
  - parameter lat: Latitud.
  - parameter lng: Longitud.
- 
+
  - returns: Distancia que hay a las coordenadas.
  */
 public func getDistanciaSucursal(_ lat: String, lng: String) -> Double {
     let finalLocation = CLLocation(latitude: Double(lat)!, longitude: Double(lng)!)
     let loc = getLocGPS()
     let startLocation = CLLocation(latitude: (loc?.coordinate.latitude)!, longitude: (loc?.coordinate.longitude)!)
-    
+
     let distancia: CLLocationDistance = startLocation.distance(from: finalLocation)
-    
+
     let kilometros = distancia/1000
     //        let code = "\(String(format: "%.2f", distancia)) metros\n\(String(format: "%.3f", kilometros)) kilometros"
-    
+
     return kilometros
 }
 */

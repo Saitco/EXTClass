@@ -179,6 +179,8 @@ public struct uiTablas {
     public var imagen: UIImage!
     public var disenio: Int!
     public var color: UIColor!
+    
+    public init() {}
 }
 
 /// Genera una lista de botones según la cadena de String que se le pase.

@@ -4,7 +4,8 @@
 [![License](https://img.shields.io/cocoapods/l/EXTClass.svg?style=flat)](http://cocoapods.org/pods/EXTClass)
 [![Platform](https://img.shields.io/cocoapods/p/EXTClass.svg?style=flat)](http://cocoapods.org/pods/EXTClass)
 [![build](https://travis-ci.org/Saitco/EXTClass.svg?branch=master)](https://travis-ci.org/Saitco/EXTClass.svg?branch=master)
-<!--[![codecov](https://codecov.io/gh/Saitco/EXTClass/branch/master/graph/badge.svg)](https://codecov.io/gh/Saitco/EXTClass)-->
+
+<!-- [![codecov](https://codecov.io/gh/Saitco/EXTClass/branch/master/graph/badge.svg)](https://codecov.io/gh/Saitco/EXTClass) -->
 
 
 <!--## Example-->
@@ -15,11 +16,7 @@
 
 |Platform|Language|IDE|
 |:----------:|:--------:|:---:|
-|iOS 8.3 **+**|Swift 3.0 **+**|Xcode 3.2 **+**|
-
-<!-- - iOS 8.3 **+** -->
-<!-- - Swift 3.0 **+** -->
-<!-- - Xcode 3.2 **+** -->
+|![platform](https://img.shields.io/badge/iOS-8.3_+-5658FE.svg)|![language](https://img.shields.io/badge/Swift-3.0_+-EF5138.svg)|![ide](https://img.shields.io/badge/Xcode-3.2_+-2A92F4.svg)|
 
 ## Installation
 

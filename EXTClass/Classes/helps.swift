@@ -174,11 +174,11 @@ public func getTextOfFile(filename aFileName: String ,filetype aFileType: String
 
 /// Estructura para los botones que conforman el menu de la App.
 public struct uiTablas {
-    var titulo: String
-    var nombreVistaControladorID: String
-    var imagen: UIImage!
-    var disenio: Int!
-    var color: UIColor!
+    public var titulo: String
+    public var nombreVistaControladorID: String
+    public var imagen: UIImage!
+    public var disenio: Int!
+    public var color: UIColor!
 }
 
 /// Genera una lista de botones según la cadena de String que se le pase.

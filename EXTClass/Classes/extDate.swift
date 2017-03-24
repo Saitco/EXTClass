@@ -68,7 +68,7 @@ extension Date {
     ///
     /// - Parameter comparar: Fecha para comparar.
     /// - Returns: true o false
-    func compararFechas(comparar: Date) -> Bool {
+    public func compararFechas(comparar: Date) -> Bool {
         let calendar =  Calendar.current
         let fechaSelf: Date = self
         let year1: Int = calendar.component(.year, from: fechaSelf)

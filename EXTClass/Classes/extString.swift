@@ -193,5 +193,18 @@ extension String {
         let fechaInt = self.descomponer(separador: "|")
         return Date().getFecha(fechaInt[1], mes: fechaInt[0])
     }
+    
+    /// Carga un texto usando NSLocalizedString.
+    public var localized: String {
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "D")
+    }
+    
+    /// Carga un texto usando NSLocalizedString.
+    ///
+    /// - Parameter comment: Texto a retornar si no se encuantra el equivalente al texto.
+    /// - Returns: String.
+    public func localizedWithComment(comment: String) -> String {
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: comment)
+    }
 
 }

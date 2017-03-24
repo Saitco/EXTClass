@@ -149,3 +149,50 @@ public func matchesForRegexInText(_ regex: String!, text: String!) -> [String] {
 public func getAppVersion() -> NSString {
     return (Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! NSString)
 }
+
+/// Abre un archivo y retorna el texto que contiene.
+///
+/// - Parameters:
+///   - aFileName: Nombre del archivo.
+///   - aFileType: Extension del archivo.
+/// - Returns: Texto del archivo.
+public func getTextOfFile(filename aFileName: String ,filetype aFileType: String) -> String {
+    var text = ""
+    var path = Bundle.main.path(forResource: aFileName, ofType: aFileType)
+    if path == nil {
+        path = Bundle.main.path(forResource: "Error", ofType: aFileType)
+    }
+    do {
+        text = try NSString.init(contentsOfFile: path!, encoding: String.Encoding.utf16.rawValue) as String //Tener encuenta el formado de codificacion.
+    }
+    catch {
+        NSLog("Error al intentar cargar: %@.%@", aFileName, aFileType)
+    }
+    return text
+}
+
+
+/// Estructura para los botones que conforman el menu de la App.
+public struct uiTablas {
+    var titulo: String
+    var nombreVistaControladorID: String
+    var imagen: UIImage!
+    var disenio: Int!
+    var color: UIColor!
+}
+
+/// Genera una lista de botones según la cadena de String que se le pase.
+///
+/// - Parameters:
+///   - ui: Cadena: 1 control activo, 0 control desactivado.
+///   - listaUI: Lista de controles disponibles.
+/// - Returns: Controles activos.
+public func cargarUI(_ ui: String, listaUI: [uiTablas]) -> [uiTablas] {
+    var result: [uiTablas] = []
+    for x in 0...ui.length-1 {
+        if ui[x] == "1" {
+            result.append(listaUI[x])
+        }
+    }
+    return result
+}

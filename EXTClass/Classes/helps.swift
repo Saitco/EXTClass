@@ -180,7 +180,13 @@ public struct uiTablas {
     public var disenio: Int!
     public var color: UIColor!
     
-    public init() {}
+    public init(titulo: String, nombreVistaControladorID: String, imagen: UIImage!, disenio: Int!, color: UIColor!) {
+        self.titulo = titulo
+        self.nombreVistaControladorID = nombreVistaControladorID
+        self.imagen = imagen
+        self.disenio = disenio
+        self.color = color
+    }
 }
 
 /// Genera una lista de botones según la cadena de String que se le pase.

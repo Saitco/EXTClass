@@ -13,7 +13,13 @@
 
 ## Requirements
 
-> iOS 8.3 and Swift 3.0
+|Platform|Language|IDE|
+|:----------:|:--------:|:---:|
+|iOS 8.3 **+**|Swift 3.0 **+**|Xcode 3.2 **+**|
+
+<!-- - iOS 8.3 **+** -->
+<!-- - Swift 3.0 **+** -->
+<!-- - Xcode 3.2 **+** -->
 
 ## Installation
 
@@ -30,4 +36,4 @@ Matias Correnti, [@matCorrenti](http://twitter.com/matCorrenti).
 
 ## License
 
-EXTClass is available under the MIT license. See the LICENSE file for more info.
+EXTClass is available under the MIT license. See the [LICENSE](https://github.com/Saitco/EXTClass/blob/master/LICENSE) file for more info.

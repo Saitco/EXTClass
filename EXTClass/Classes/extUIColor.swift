@@ -10,8 +10,16 @@ import UIKit
 
 extension UIColor {
 
-    convenience init(hexInt:Int) {
+    convenience init(hexInt: Int) {
         self.init(red:(hexInt >> 16) & 0xff, green:(hexInt >> 8) & 0xff, blue:hexInt & 0xff)
+    }
+    
+    convenience init (hexUInt32: UInt32) {
+        let red = CGFloat((hexUInt32 & 0xFF0000) >> 16) / 256.0
+        let green = CGFloat((hexUInt32 & 0xFF00) >> 8) / 256.0
+        let blue = CGFloat(hexUInt32 & 0xFF) / 256.0
+        
+        self.init(red: red, green: green, blue: blue, alpha: 1)
     }
 
     convenience init(hexString: String) {

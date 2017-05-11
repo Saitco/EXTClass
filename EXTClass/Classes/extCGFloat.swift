@@ -18,16 +18,16 @@ extension CGFloat {
     }
 
     public func toRadians() -> CGFloat {
-        return (CGFloat (M_PI) * self) / 180.0
+        return (CGFloat.pi * self) / 180.0
     }
 
     public mutating func toRadiansInPlace() {
-        self = (CGFloat (M_PI) * self) / 180.0
+        self = (CGFloat.pi * self) / 180.0
     }
 
     /// Converts angle degrees to radians.
     public func degreesToRadians (_ angle: CGFloat) -> CGFloat {
-        return (CGFloat (M_PI) * angle) / 180.0
+        return (CGFloat.pi * angle) / 180.0
     }
 
     /// Convierte a una cadena de texto personalizada describiendo si es kilometros o metros. Muestras: A "2.345 km", "A 278 m", "A 24 m".

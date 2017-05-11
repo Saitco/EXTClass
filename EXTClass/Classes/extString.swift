@@ -169,13 +169,27 @@ extension String {
     ///
     /// - Returns: Cadena modificada.
     public func MyFormato() -> String {
-        do {
-            let valor: Int = try Int(self)!
+        if let valor = Int(self) {
+//            let valor: Int = Int(self)!
             guard valor <= 9 else { return self }
             return String(format: "%02d", valor)
-        } catch {
+        } else {
             return self
         }
+    }
+    
+    public func toURL() -> URL {
+        return URL(string: self)!
+    }
+    
+    public func toInt() -> Int {
+        if self == "" { return 0 }
+        return Int(self)!
+    }
+    
+    public func toDouble() -> Double {
+        if self == "" { return 0.0 }
+        return Double(self)!
     }
 
     /// Convierte el String con el formato '0|0|0|0' en una lista de Int.

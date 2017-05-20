@@ -51,32 +51,34 @@ extension Int {
     
     /// Regresa el nombre del mes correspondiente (valido entre 1 y 12)
     var toMes: String {
-        if 1 == self {
-            return "Enero"
-        } else if 2 == self {
-            return "Febrero"
-        } else if 3 == self {
-            return "Marzo"
-        } else if 4 == self {
-            return "Abril"
-        } else if 5 == self {
-            return "Mayo"
-        } else if 6 == self {
-            return "Junio"
-        } else if 7 == self {
-            return "Julio"
-        } else if 8 == self {
-            return "Agosto"
-        } else if 9 == self {
-            return "Septiembre"
-        } else if 10 == self {
-            return "Octubre"
-        } else if 11 == self {
-            return "Noviembre"
-        } else if 12 == self {
-            return "Diciembre"
+        if self >= 1 && self <= 12 {
+            if 1 == self {
+                return "Enero"
+            } else if 2 == self {
+                return "Febrero"
+            } else if 3 == self {
+                return "Marzo"
+            } else if 4 == self {
+                return "Abril"
+            } else if 5 == self {
+                return "Mayo"
+            } else if 6 == self {
+                return "Junio"
+            } else if 7 == self {
+                return "Julio"
+            } else if 8 == self {
+                return "Agosto"
+            } else if 9 == self {
+                return "Septiembre"
+            } else if 10 == self {
+                return "Octubre"
+            } else if 11 == self {
+                return "Noviembre"
+            } else if 12 == self {
+                return "Diciembre"
+            }
         }
-        return ""
+        return "Not found"
     }
     
 }

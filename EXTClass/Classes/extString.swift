@@ -108,8 +108,8 @@ extension String {
         var returns = self
         var analizar = true
         while analizar {
-            if returns.characters.last == " " {
-                returns = returns.substring(with: returns.startIndex..<returns.characters.index(before: returns.endIndex))
+            if returns.last == " " {
+                returns = returns.substring(with: returns.startIndex..<returns.index(before: returns.endIndex))
             } else {
                 analizar = false
             }
@@ -127,14 +127,14 @@ extension String {
 
     /// Largo del String.
     public var length: Int {
-        return self.characters.count
+        return self.count
     }
 
     /// Buscar mediante index.
     ///
     /// - Parameter i: Posición a buscar.
     public subscript (i: Int) -> Character {
-        return self[self.characters.index(self.startIndex, offsetBy: i)]
+        return self[self.index(self.startIndex, offsetBy: i)]
     }
 
     /// Buscar mediante index.

@@ -41,13 +41,13 @@ extension CGFloat {
         var num: String = ""
         if self < 0.01 {
             num = String(format: "%.3f", self)
-            num = num.substring(from: num.characters.index(num.startIndex, offsetBy: 4))
+            num = num.substring(from: num.index(num.startIndex, offsetBy: 4))
         } else if self < 0.1 {
             num = String(format: "%.3f", self)
-            num = num.substring(from: num.characters.index(num.startIndex, offsetBy: 3))
+            num = num.substring(from: num.index(num.startIndex, offsetBy: 3))
         } else if self < 1 {
             num = String(format: "%.3f", self)
-            num = num.substring(from: num.characters.index(num.startIndex, offsetBy: 2))
+            num = num.substring(from: num.index(num.startIndex, offsetBy: 2))
         } else {
             num = String(format: "%.3f", self)
         }

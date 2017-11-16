@@ -10,11 +10,11 @@ import UIKit
 
 extension UIColor {
 
-    convenience init(hexInt: Int) {
+    public convenience init(hexInt: Int) {
         self.init(red:(hexInt >> 16) & 0xff, green:(hexInt >> 8) & 0xff, blue:hexInt & 0xff)
     }
     
-    convenience init (hexUInt32: UInt32) {
+    public convenience init (hexUInt32: UInt32) {
         let red = CGFloat((hexUInt32 & 0xFF0000) >> 16) / 256.0
         let green = CGFloat((hexUInt32 & 0xFF00) >> 8) / 256.0
         let blue = CGFloat(hexUInt32 & 0xFF) / 256.0
@@ -22,9 +22,9 @@ extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: 1)
     }
 
-    convenience init(hexString: String) {
-        let hexNumber = String(hexString.characters.dropFirst())
-        precondition(hexNumber.characters.count == 6, "Hex string \(hexString) has to be in format \"#RRGGBB\"!")
+    public convenience init(hexString: String) {
+        let hexNumber = String(hexString.dropFirst())
+        precondition(hexNumber.count == 6, "Hex string \(hexString) has to be in format \"#RRGGBB\"!")
         guard let hexValue = Int(hexNumber, radix: 16) else {
             preconditionFailure("Hex string \(hexString) could not be parsed!")
         }
@@ -36,7 +36,7 @@ extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: 1)
     }
 
-    convenience init(red: Int, green: Int, blue: Int) {
+    public convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
         assert(green >= 0 && green <= 255, "Invalid green component")
         assert(blue >= 0 && blue <= 255, "Invalid blue component")

@@ -52,10 +52,10 @@ extension UIView {
         if let sview = view.superview {
             if sview === superview {
                 return true
-            }else{
+            } else {
                 return viewHasSuperview(sview, superview: superview)
             }
-        }else{
+        } else {
             return false
         }
     }

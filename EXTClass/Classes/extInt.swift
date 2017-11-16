@@ -50,7 +50,7 @@ extension Int {
 extension Int {
     
     /// Regresa el nombre del mes correspondiente (valido entre 1 y 12)
-    var toMes: String {
+    public var toMes: String {
         if self >= 1 && self <= 12 {
             if 1 == self {
                 return "Enero"

@@ -153,7 +153,7 @@ extension Date {
     /// <#Description#>
     ///
     /// - Returns: <#return value description#>
-    func sinceIngles() -> String {
+    public func sinceIngles() -> String {
         let seconds = abs(Date().timeIntervalSince1970 - self.timeIntervalSince1970)
         if seconds <= 120 {
             return "just now"
@@ -193,7 +193,7 @@ extension Date {
     /// Social.
     ///
     /// - Returns: <#return value description#>
-    func sinceCastellano() -> String {
+    public func sinceCastellano() -> String {
         let seconds = abs(Date().timeIntervalSince1970 - self.timeIntervalSince1970)
         if seconds <= 120 {
             return "ahora"

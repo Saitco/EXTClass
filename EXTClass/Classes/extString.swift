@@ -62,43 +62,36 @@ extension String {
     public func rangesOfString(_ s: String, textoExacto: Bool) -> [Range<Index>] {
         if textoExacto {
             let re = try! NSRegularExpression(pattern: NSRegularExpression.escapedPattern(for: s), options: [])
-            return re.matches(in: self, options: [], range: nsRange(from: startIndex ..< endIndex)).flatMap { range(from: $0.range) }
+            return re.matches(in: self, options: [], range: nsRange(from: startIndex ..< endIndex)).compactMap { range(from: $0.range) }
         } else {
             let re = try! NSRegularExpression(pattern: NSRegularExpression.escapedPattern(for: s), options: [.caseInsensitive])
-            return re.matches(in: self, options: [], range: nsRange(from: startIndex ..< endIndex)).flatMap { range(from: $0.range) }
+            return re.matches(in: self, options: [], range: nsRange(from: startIndex ..< endIndex)).compactMap { range(from: $0.range) }
         }
     }
 
-    //Para Swift3
-
-    /// <#Description#>
-    ///
-    /// - Parameter nsRange: <#nsRange description#>
-    /// - Returns: <#return value description#>
-    public func range(from nsRange: NSRange) -> Range<String.Index>? {
-        guard
-            let from16 = utf16.index(utf16.startIndex, offsetBy: nsRange.location, limitedBy: utf16.endIndex),
-            let to16 = utf16.index(from16, offsetBy: nsRange.length, limitedBy: utf16.endIndex),
-            let from = String.Index(from16, within: self),
-            let to = String.Index(to16, within: self)
-            else { return nil }
-        return from ..< to
-    }
-
-    //Para Swift3
+    //Para Swift4
 
     /// <#Description#>
     ///
     /// - Parameter range: <#range description#>
     /// - Returns: <#return value description#>
-    public func nsRange(from range: Range<String.Index>) -> NSRange {
-        let utf16view = self.utf16
-        let from = range.lowerBound.samePosition(in: utf16view)
-        let to = range.upperBound.samePosition(in: utf16view)
-        return NSMakeRange(utf16view.distance(from: utf16view.startIndex, to: from),
-                           utf16view.distance(from: from, to: to))
+    public func range(from nsRange: NSRange) -> Range<String.Index>? {
+        return Range(nsRange, in: self)
     }
-
+    
+    //Para Swift4
+    
+    /// <#Description#>
+    ///
+    /// - Parameter range: <#range description#>
+    /// - Returns: <#return value description#>
+    func nsRange(from range: Range<String.Index>) -> NSRange {
+        let utf16view = self.utf16
+        if let from = range.lowerBound.samePosition(in: utf16view), let to = range.upperBound.samePosition(in: utf16view) {
+            return NSMakeRange(utf16view.distance(from: utf16view.startIndex, to: from), utf16view.distance(from: from, to: to))
+        }
+        return NSMakeRange(0, 0)
+    }
 
     /// Elimina todos los espacios en blanco que se encuentran al final de una cadena.
     ///
@@ -109,13 +102,25 @@ extension String {
         var analizar = true
         while analizar {
             if returns.last == " " {
-                returns = returns.substring(with: returns.startIndex..<returns.index(before: returns.endIndex))
+                returns = String(returns[returns.startIndex..<returns.index(before: returns.endIndex)])
             } else {
                 analizar = false
             }
         }
         return returns
     }
+    
+    
+    func substring(from: Int, to: Int) -> String {
+        let start = index(startIndex, offsetBy: from)
+        let end = index(start, offsetBy: to - from)
+        return String(self[start ..< end])
+    }
+    
+    func substring(range: NSRange) -> String {
+        return substring(from: range.lowerBound, to: range.upperBound)
+    }
+    
 
     /// Convierte una cadena con el formato "3:4" a un CGFloat (Usar para los NSLayoutConstraint aspect de las imagenes).
     ///

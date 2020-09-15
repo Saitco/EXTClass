@@ -41,6 +41,11 @@ extension CGFloat {
         var num: String = ""
         if self < 0.01 {
             num = String(format: "%.3f", self)
+            
+//            let dd = String(num[..<num.startIndex])
+            
+//            let ddd = num.substring(range: <#T##NSRange#>)
+            
             num = num.substring(from: num.index(num.startIndex, offsetBy: 4))
         } else if self < 0.1 {
             num = String(format: "%.3f", self)
